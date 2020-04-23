@@ -1,6 +1,6 @@
 # Nepali Stemmer
 
-This is simple Nepali stemmer. It iteratively separates out the suffixes (postpositions) until no more separation can be processed. The algorithm is based on hindi-stemmer.
+This is a simple Nepali stemmer. It iteratively separates out the suffixes (postpositions) until no more separation can be processed. The algorithm is based on hindi-stemmer.
 
 ## Features:
  - Iterative separation
