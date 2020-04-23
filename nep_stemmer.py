@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
     Simple Nepali stemmer
     
@@ -11,6 +12,7 @@
 
 import re
 import sys
+import string
 from root import *
 
 '''
@@ -41,11 +43,19 @@ class NepStemmer:
     # Devanagari range \u0900-\u097F
     # Alphanumeric range \w
     def clean_text(self, text, chars=None):
-        puncts = "()\"#/@;:<>{}`+-=~|!?,'।॥’–"
+#         puncts = string.punctuation+"—()\"#/@;:<>{}`+-=~|!?,'।॥‘’–…⁄"
+        
+        # Except the necessary unicode range
+        puncts = "^\w\u0900-\u097F"
+        
+        # if text contains only punctuations
+        if text in list(puncts):
+            return text
+        
         if chars == None:
             text = re.findall(r"[\w\u0900-\u097F]+|["+puncts+"]", text)
         else:
-            text = re.findall(r"[\w\u0900-\u097F]+|[" +chars+ "()\"#/@;:<>{}`+=~|!?,'।॥]", text)
+            text = re.findall(r"[\w\u0900-\u097F]+|[" +chars+puncts+"]", text)
         return text
 
 
@@ -61,10 +71,11 @@ class NepStemmer:
         # process only first part of cleaned_text
         punct=''
         if clean:
+            ans = word[0]
+            core_word = word[0]            
             if len(word) > 1:
                 punct = ''.join(word[1:])
-            ans = word[0]
-            core_word = word[0]
+
         else:
             ans = word
             core_word = word
@@ -104,18 +115,21 @@ class NepStemmer:
         return ans+punct if len(word)>1 else ans
 
 
+    def stemmer(self, input_string, clean=True, chars=None):
+        result = []
+        input_string = input_string.replace('\n','')
+        input_string = input_string.replace('\t','')
+        for each in input_string.split():
+            result.append(self.nep_stem(each, clean=True))
+        return ' '.join(result)
+        
 
 if __name__=="__main__":
-    s = NepStemmer(shabdakosh="./files/shabdakosh-words.txt", suffix_path='./files/suffix.txt')
+    nepstem = NepStemmer(shabdakosh="./files/shabdakosh-words.txt", suffix_path='./files/suffix.txt')
 
-    test_string = """बीपी कोइराला स्वास्थ्य विज्ञान प्रतिष्ठान धरानमा गरिएको स्वाब परीक्षणमा भोजपुरका २६ वर्षीय पुरुषमा कोरोना संक्रमण देखिएको डा. अधिकारीले जानकारी दिए।
-
-यसअघि आजै जनकपुरका १४ वर्षीय बालक र उदयपुरकी ५५ वर्षीया महिलामा पनि कोरोना संक्तमण देखिएको थियो। त्यस्तै आजै संक्रमितमध्ये ३ जना निको भएर घर फर्किएका छन्। बिहीबार साँझसम्म कोरोना संक्रमणपछि निको हुनेको संख्या १० पुगेको छ। """
+    test_string = """ म,' २०१९–सेप्टेम्बर १⁄2 तारिखका, दिन बेइजिङमा… विधावारिधि पढ्न आइपुगेकी थिएँ ।"""
     
     print("Test string : {}\n".format(test_string))
 
-    result = []
-    for each in test_string.split():
-        result.append(s.nep_stem(each, clean=True))
-
-    print("Output string : {}".format(' '.join(result)))
+    print("Output string : {}".format(nepstem.stemmer(test_string)))
+    
