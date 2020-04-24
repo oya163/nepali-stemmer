@@ -6,6 +6,7 @@ This is a simple Nepali stemmer. It iteratively separates out the suffixes (post
  - Iterative separation
  - Handles the postposition attached with punctuations carefully
      - Example: नेपाललाई, -> नेपाल लाई,
+ - Basic text cleaning
  - Cross-verification with Nepali dictionary
 
 ## How to run
@@ -20,6 +21,7 @@ This is a simple Nepali stemmer. It iteratively separates out the suffixes (post
 ## To-do:
 - [ ] Word transformation with stemming process
 - [ ] IR evaluation
+- [ ] Code-mixed data
 
 
 ## References:
@@ -29,4 +31,6 @@ This is a simple Nepali stemmer. It iteratively separates out the suffixes (post
 
 
 ## Contact
-oyashi
+[oyashi](mailto:oyeshsin@hotmail.com)
+
+### Note: Project created during COVID-19 quarantine out-of-boredom and necessity
