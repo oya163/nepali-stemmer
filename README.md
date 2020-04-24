@@ -6,15 +6,19 @@ This is a simple Nepali stemmer. It iteratively separates out the suffixes (post
  - Iterative separation
  - Handles the postposition attached with punctuations carefully
      - Example: नेपाललाई, -> नेपाल लाई,
- - Checks with Nepali dictionary
+ - Cross-verification with Nepali dictionary
 
 ## How to run
 
-    python nep_stemmer.py
+    >>> from nepali_stemmer.stemmer import NepStemmer
+    >>> nepstem = NepStemmer()
+    >>> nepstem.stem("नेपालको एमाले पार्टीका झोले, मण्डलेहरु अमेरिका आउने रे !")                                                                                                      
+    
+    'नेपाल को एमाले पार्टी का झोले, मण्डले हरु अमेरिका आउने रे !'
 
 
 ## To-do:
-- [ ] Word transformation when stemmed
+- [ ] Word transformation with stemming process
 - [ ] IR evaluation
 
 
@@ -22,3 +26,7 @@ This is a simple Nepali stemmer. It iteratively separates out the suffixes (post
  - Suffix list: https://github.com/birat-bade/NepaliStemmer
  - Nepali Dictionary : https://github.com/PraveshKoirala/stemmer
  - Algorithm : https://github.com/sainimohit23/hindi-stemmer
+
+
+## Contact
+oyashi
