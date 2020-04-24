@@ -10,6 +10,8 @@ This is a simple Nepali stemmer. It iteratively separates out the suffixes (post
  - Cross-verification with Nepali dictionary
 
 ## How to install
+    pip install -r requirements.txt
+    
     pip install nepali-stemmer
 
 ## How to run
