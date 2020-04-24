@@ -9,6 +9,9 @@ This is a simple Nepali stemmer. It iteratively separates out the suffixes (post
  - Basic text cleaning
  - Cross-verification with Nepali dictionary
 
+## How to install
+    pip install nepali-stemmer
+
 ## How to run
 
     >>> from nepali_stemmer.stemmer import NepStemmer
