@@ -122,14 +122,5 @@ class NepStemmer:
         for each in input_string.split():
             result.append(self.nep_stem(each, clean=True))
         return ' '.join(result)
-        
+       
 
-if __name__=="__main__":
-    nepstem = NepStemmer(shabdakosh="./files/shabdakosh-words.txt", suffix_path='./files/suffix.txt')
-
-    test_string = """ म,' २०१९–सेप्टेम्बर १⁄2 तारिखका, दिन बेइजिङमा… विधावारिधि पढ्न आइपुगेकी थिएँ ।"""
-    
-    print("Test string : {}\n".format(test_string))
-
-    print("Output string : {}".format(nepstem.stemmer(test_string)))
-    
