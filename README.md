@@ -31,6 +31,6 @@ This is a simple Nepali stemmer. It iteratively separates out the suffixes (post
 
 
 ## Contact
-[oyashi](mailto:oyeshsin@hotmail.com)
+Email: [oyashi](mailto:oyeshsin@hotmail.com)
 
-### Note: Project created during COVID-19 quarantine out-of-boredom and necessity
+Note: Project created during COVID-19 quarantine out-of-boredom and necessity
