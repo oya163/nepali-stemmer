@@ -26,8 +26,6 @@ class NepStemmer:
         if suffix_path==None:
             with pkg.path("nepali_stemmer.files","suffix.txt") as s:
                 suffix_path = s
-        #dict_path = pkgutil.get_data(__package__, 'files/dictionary.txt')
-        #suffix_path = pkgutil.get_data(__package__, 'files/suffix.txt')
         self.nep_dict = nep_dictionary(dict_path)
         self.suffix_path = suffix_path
         self.suffixes = self.get_suffix()
