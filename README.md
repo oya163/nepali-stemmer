@@ -18,9 +18,15 @@ This is a simple Nepali stemmer. It iteratively separates out the suffixes (post
 
     from nepali_stemmer.stemmer import NepStemmer
     nepstem = NepStemmer()
-    nepstem.stem("नेपालको एमाले पार्टीका झोले, मण्डलेहरु अमेरिका आउने रे !")                                                                                                      
+    nepstem.stem("नेपालको एमाले पार्टीका झोले, मण्डलेहरु अमेरिका आउने रे !")
     
     'नेपाल को एमाले पार्टी का झोले, मण्डले हरु अमेरिका आउने रे !'
+
+
+## Deployment
+
+A simple flask based web app [deployment](https://nepali-stemmer.herokuapp.com/)
+
 
 
 ## To-do:
