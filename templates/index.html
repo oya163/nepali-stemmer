@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Nepali Stemmer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+      .container {
+        max-width: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Nepali Stemmer</h1>
+      <form role="form" method='POST' action='/post'>
+        <div class="form-group">
+         <textarea rows = "5" cols = "60" type="text" name="input" class="form-control" id="url-box" placeholder="शब्दहरु दिनुहोस :" autofocus required>विश्वभर नोवल कोरोना भाइरस (कोभिड–१९) संक्रमणका कारण ज्यान जानेको संख्याका शनिबार २ लाख नाघेको छ । जोन हप्किन्स विश्वविद्यालयका अनुसार शनिबार साँझसम्म कोभिड–१९ का कारण मृत्यु हुनेको संख्या विश्वभर २ लाख ७ पुगेको छ र यो बढ्ने क्रममा छ । चीनको हुबेई प्रान्तको राजधानी वुहानबाट गत वर्षको डिसेम्बर अन्तिममा फैलिएको कोभिड–१९ संक्रमितको संख्या २८ लाख ६६ हजारभन्दा धेरै छ । हजारौं अझै बिरामी छन् भने हालसम्म ८ लाख १० हजार निको भएका छन् । </textarea>
+        </div>
+        <button type="submit" class="btn btn-default">बुझानुस</button>
+      </form>
+      <br>
+      {% for error in errors %}
+        <h4>{{ error }}</h4>
+      {% endfor %}
+        <div class="results">
+          {% if results %}
+            <h2>Results</h2>
+            <br>
+            <p id="results">{{ results }}</p> 
+          {% endif %}
+        </div>         
+    </div>
+     
+    <script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </body>
+</html>
