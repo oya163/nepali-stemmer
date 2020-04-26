@@ -1,1 +1,1 @@
-web: gunicorn wsgi:nepali_stemmer
+web: gunicorn app:app
