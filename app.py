@@ -12,7 +12,10 @@ def post():
     value = request.form['input']
     nepstem = NepStemmer()
     results = nepstem.stem(value)
-    return render_template('index.html', errors=errors, results=results)
+    if request.method == "GET":
+        return render_template('index.html')
+    else:
+        return render_template('index.html', errors=errors, results=results)
 
 
 if __name__ == "__main__":
