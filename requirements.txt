@@ -1,3 +1,4 @@
 importlib-resources==1.4.0
 nepali-stemmer==0.0.2
 gunicorn
+flask
