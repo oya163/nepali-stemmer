@@ -6,7 +6,7 @@ app = Flask(__name__)
 def hello():
     return render_template('index.html')
 
-@app.route('/post', methods=['POST'])
+@app.route('/post', methods=['GET','POST'])
 def post():
     errors = []
     value = request.form['input']
